@@ -59,7 +59,7 @@ fetch("./wandererDB.json")
                             if (!path) return;
 
                             const img = document.createElement("img");
-                            img.src = "img/" + path + ".jpg";
+                            img.src = "img/" + path;
                             img.loading = "lazy";
                             img.onerror = () => img.remove();
 
