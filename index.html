@@ -1,23 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="out">loading...</div>
+
 <script>
-fetch("./wandererDB.json")
-.then(response => {
-
-    console.log(response);
-    console.log(response.status);
-    console.log(response.headers.get("content-type"));
-
-    return response.text();
-
-})
-.then(text => {
-
-    console.log(text.substring(0,100));
-
-    document.body.innerHTML =
-        "<pre>" +
-        text.substring(0,500) +
-        "</pre>";
-
-})
-.catch(console.error);
+document.getElementById("out").textContent = "JS OK";
 </script>
+
+</body>
+</html>
