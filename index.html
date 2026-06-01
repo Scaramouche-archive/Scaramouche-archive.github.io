@@ -1,26 +1,25 @@
 <script>
 fetch("wandererDB.json")
-.then(r => r.text())
-.then(text => {
+.then(r => r.json())
+.then(data => {
 
-    console.log(text);
+    const container = document.getElementById("container");
 
-    try {
-        const data = JSON.parse(text);
+    Object.values(data.intro).forEach(item => {
 
-        document.body.innerHTML =
-            "<h1>JSON OK</h1>";
+        const article = document.createElement("div");
 
-        console.log(data);
+        article.innerHTML = `
+            <h2>${item.title.ja}</h2>
+            <div>${item.description.ja}</div>
+            <hr>
+        `;
 
-    } catch(e) {
+        container.appendChild(article);
+    });
 
-        document.body.innerHTML =
-            "<pre>" + e.message + "</pre>";
-
-        console.error(e);
-
-    }
-
-});
+})
+.catch(console.error);
 </script>
+
+<div id="container"></div>
