@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<div id="out">loading...</div>
+<div id="out"></div>
 
 <script>
 fetch("./wandererDB.json")
-.then(r => {
-    document.getElementById("out").textContent =
-        "status = " + r.status;
-})
-.catch(e => {
-    document.getElementById("out").textContent =
-        "error = " + e;
+.then(r => r.text())
+.then(text => {
+
+    document.getElementById("out").innerHTML =
+        "文字数: " + text.length;
+
+    try {
+
+        JSON.parse(text);
+
+        document.getElementById("out").innerHTML +=
+            "<br>JSON OK";
+
+    } catch(e) {
+
+        document.getElementById("out").innerHTML +=
+            "<br>" + e.message;
+
+        console.error(e);
+
+    }
+
 });
 </script>
-
 </body>
 </html>
