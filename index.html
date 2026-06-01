@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Wanderer Archive</title>
 
@@ -18,13 +18,14 @@ body{
 
 h1{
     text-align:center;
+    margin-bottom:30px;
 }
 
 .card{
     background:#1a1a1a;
     border:1px solid #333;
     border-radius:12px;
-    margin-bottom:24px;
+    margin-bottom:30px;
     overflow:hidden;
 }
 
@@ -56,7 +57,7 @@ h1{
 }
 
 .title{
-    font-size:1.5rem;
+    font-size:1.6rem;
     font-weight:bold;
     margin-bottom:16px;
 }
@@ -66,10 +67,10 @@ h1{
 }
 
 .images img{
+    display:block;
     max-width:100%;
     border-radius:8px;
     margin-bottom:12px;
-    display:block;
 }
 
 .links{
@@ -78,9 +79,14 @@ h1{
 
 .links a{
     display:inline-block;
-    margin-right:10px;
-    margin-bottom:10px;
     color:#7eb8ff;
+    margin-right:12px;
+    margin-bottom:8px;
+    text-decoration:none;
+}
+
+.links a:hover{
+    text-decoration:underline;
 }
 
 .error{
@@ -95,6 +101,9 @@ h1{
 <div id="app">Loading...</div>
 
 <script>
+
+const params = new URLSearchParams(window.location.search);
+const defaultLang = params.get("lang");
 
 fetch("./wandererDB.json")
 .then(response => response.json())
@@ -133,53 +142,66 @@ fetch("./wandererDB.json")
             title.className = "title";
             title.textContent =
                 item.title?.[lang]
-                || item.title?.ja
-                || "";
+                ?? item.title?.ja
+                ?? "";
 
             content.appendChild(title);
 
-            const desc = document.createElement("div");
-            desc.innerHTML =
+            const description =
+                document.createElement("div");
+
+            description.innerHTML =
                 item.description?.[lang]
-                || "";
+                ?? "";
 
-            content.appendChild(desc);
+            content.appendChild(description);
 
-            // 画像
-            const images = document.createElement("div");
-            images.className = "images";
+            const imageArea =
+                document.createElement("div");
+
+            imageArea.className = "images";
 
             if(Array.isArray(item.img)){
 
                 item.img.forEach(group => {
 
-                    Object.values(group).forEach(imageSet => {
+                    Object.values(group)
+                    .forEach(imageSet => {
 
-                        const path = imageSet?.[lang];
+                        const path =
+                            imageSet?.[lang];
 
-                        if(path){
-
-                            const img =
-                                document.createElement("img");
-
-                            img.src = path + ".jpg";
-
-                            img.onerror = () => {
-                                img.remove();
-                            };
-
-                            images.appendChild(img);
+                        if(!path){
+                            return;
                         }
+
+                        const img =
+                            document.createElement("img");
+
+                        img.src =
+                            "img/" +
+                            path +
+                            ".jpg";
+
+                        img.loading = "lazy";
+
+                        img.onerror = () => {
+                            img.remove();
+                        };
+
+                        imageArea.appendChild(img);
+
                     });
 
                 });
 
             }
 
-            content.appendChild(images);
+            content.appendChild(imageArea);
 
-            // URL
-            const links = document.createElement("div");
+            const links =
+                document.createElement("div");
+
             links.className = "links";
 
             if(
@@ -188,16 +210,19 @@ fetch("./wandererDB.json")
                 && item.url[0][lang]
             ){
 
-                item.url[0][lang].forEach(site => {
+                item.url[0][lang]
+                .forEach(site => {
 
-                    Object.entries(site).forEach(([name,url]) => {
+                    Object.entries(site)
+                    .forEach(([name,url]) => {
 
                         const a =
                             document.createElement("a");
 
                         a.href = url;
                         a.target = "_blank";
-                        a.rel = "noopener noreferrer";
+                        a.rel =
+                            "noopener noreferrer";
 
                         a.textContent = name;
 
@@ -211,37 +236,46 @@ fetch("./wandererDB.json")
 
             content.appendChild(links);
 
-            tabs.querySelectorAll("button")
+            tabs
+                .querySelectorAll("button")
                 .forEach(btn =>
                     btn.classList.remove("active")
                 );
 
             document
-                .getElementById(`tab-${id}-${lang}`)
+                .getElementById(
+                    `tab-${id}-${lang}`
+                )
                 ?.classList.add("active");
         }
 
         availableLangs.forEach(lang => {
 
-            const btn =
+            const button =
                 document.createElement("button");
 
-            btn.id =
+            button.id =
                 `tab-${id}-${lang}`;
 
-            btn.textContent =
+            button.textContent =
                 data.language[lang];
 
-            btn.addEventListener(
+            button.addEventListener(
                 "click",
                 () => render(lang)
             );
 
-            tabs.appendChild(btn);
+            tabs.appendChild(button);
 
         });
 
-        render(availableLangs[0]);
+        const initialLang =
+            defaultLang &&
+            availableLangs.includes(defaultLang)
+                ? defaultLang
+                : availableLangs[0];
+
+        render(initialLang);
 
         card.appendChild(tabs);
         card.appendChild(content);
