@@ -2,39 +2,265 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Wanderer Archive</title>
+
+<style>
+body{
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    background:#111;
+    color:#fff;
+}
+
+h1{
+    text-align:center;
+}
+
+.card{
+    background:#1a1a1a;
+    border:1px solid #333;
+    border-radius:12px;
+    margin-bottom:24px;
+    overflow:hidden;
+}
+
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+    background:#222;
+}
+
+.tabs button{
+    border:none;
+    background:#222;
+    color:white;
+    padding:12px 16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.tabs button:hover{
+    background:#333;
+}
+
+.tabs button.active{
+    background:#4a90e2;
+}
+
+.content{
+    padding:20px;
+}
+
+.title{
+    font-size:1.5rem;
+    font-weight:bold;
+    margin-bottom:16px;
+}
+
+.images{
+    margin-top:20px;
+}
+
+.images img{
+    max-width:100%;
+    border-radius:8px;
+    margin-bottom:12px;
+    display:block;
+}
+
+.links{
+    margin-top:20px;
+}
+
+.links a{
+    display:inline-block;
+    margin-right:10px;
+    margin-bottom:10px;
+    color:#7eb8ff;
+}
+
+.error{
+    color:#ff8080;
+}
+</style>
 </head>
 <body>
 
-<div id="app"></div>
+<h1>Wanderer Archive</h1>
+
+<div id="app">Loading...</div>
 
 <script>
 
 fetch("./wandererDB.json")
-.then(r => r.json())
+.then(response => response.json())
 .then(data => {
 
-    const app =
-        document.getElementById("app");
+    const app = document.getElementById("app");
+    app.innerHTML = "";
 
-    Object.values(data.intro)
-    .forEach(item => {
+    Object.entries(data.intro).forEach(([id,item]) => {
 
-        const article =
-            document.createElement("article");
+        const card = document.createElement("div");
+        card.className = "card";
 
-        article.innerHTML = `
-            <h2>${item.title.ja}</h2>
-            <div>${item.description.ja}</div>
-            <hr>
-        `;
+        const tabs = document.createElement("div");
+        tabs.className = "tabs";
 
-        app.appendChild(article);
+        const content = document.createElement("div");
+        content.className = "content";
+
+        const availableLangs =
+            Object.keys(data.language)
+            .filter(lang =>
+                item.description &&
+                item.description[lang] !== null
+            );
+
+        if(availableLangs.length === 0){
+            return;
+        }
+
+        function render(lang){
+
+            content.innerHTML = "";
+
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent =
+                item.title?.[lang]
+                || item.title?.ja
+                || "";
+
+            content.appendChild(title);
+
+            const desc = document.createElement("div");
+            desc.innerHTML =
+                item.description?.[lang]
+                || "";
+
+            content.appendChild(desc);
+
+            // 画像
+            const images = document.createElement("div");
+            images.className = "images";
+
+            if(Array.isArray(item.img)){
+
+                item.img.forEach(group => {
+
+                    Object.values(group).forEach(imageSet => {
+
+                        const path = imageSet?.[lang];
+
+                        if(path){
+
+                            const img =
+                                document.createElement("img");
+
+                            img.src = path + ".jpg";
+
+                            img.onerror = () => {
+                                img.remove();
+                            };
+
+                            images.appendChild(img);
+                        }
+                    });
+
+                });
+
+            }
+
+            content.appendChild(images);
+
+            // URL
+            const links = document.createElement("div");
+            links.className = "links";
+
+            if(
+                Array.isArray(item.url)
+                && item.url[0]
+                && item.url[0][lang]
+            ){
+
+                item.url[0][lang].forEach(site => {
+
+                    Object.entries(site).forEach(([name,url]) => {
+
+                        const a =
+                            document.createElement("a");
+
+                        a.href = url;
+                        a.target = "_blank";
+                        a.rel = "noopener noreferrer";
+
+                        a.textContent = name;
+
+                        links.appendChild(a);
+
+                    });
+
+                });
+
+            }
+
+            content.appendChild(links);
+
+            tabs.querySelectorAll("button")
+                .forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+            document
+                .getElementById(`tab-${id}-${lang}`)
+                ?.classList.add("active");
+        }
+
+        availableLangs.forEach(lang => {
+
+            const btn =
+                document.createElement("button");
+
+            btn.id =
+                `tab-${id}-${lang}`;
+
+            btn.textContent =
+                data.language[lang];
+
+            btn.addEventListener(
+                "click",
+                () => render(lang)
+            );
+
+            tabs.appendChild(btn);
+
+        });
+
+        render(availableLangs[0]);
+
+        card.appendChild(tabs);
+        card.appendChild(content);
+
+        app.appendChild(card);
 
     });
 
-});
+})
+.catch(error => {
 
+    document.getElementById("app").innerHTML =
+        `<div class="error">
+            ${error}
+        </div>`;
+
+    console.error(error);
+
+});
 </script>
 
 </body>
