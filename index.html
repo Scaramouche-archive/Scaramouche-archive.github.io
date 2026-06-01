@@ -2,29 +2,26 @@
 <html>
 <body>
 
-<h1>TEST</h1>
-
-<div id="output"></div>
+<div id="out"></div>
 
 <script>
 fetch("wandererDB.json")
-.then(r => r.json())
-.then(data => {
+.then(r => r.text())
+.then(text => {
 
-    document.getElementById("output").innerHTML =
-        "<pre>" +
-        JSON.stringify(data, null, 2)
-        + "</pre>";
+    document.getElementById("out").textContent =
+        text.substring(0, 500);
+
+    console.log("JSON取得成功");
 
 })
 .catch(err => {
 
-    document.getElementById("output").innerHTML =
-        "<h2>ERROR</h2><pre>" +
-        err +
-        "</pre>";
+    document.body.innerHTML =
+        "<pre>" + err + "</pre>";
 
     console.error(err);
+
 });
 </script>
 
