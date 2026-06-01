@@ -1,25 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wanderer Archive</title>
+
+<style>
+body{
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    background:#111;
+    color:#fff;
+}
+
+.card{
+    border:1px solid #333;
+    border-radius:10px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+    background:#222;
+}
+
+.tabs button{
+    border:none;
+    background:#222;
+    color:white;
+    padding:12px 16px;
+    cursor:pointer;
+}
+
+.tabs button.active{
+    background:#4a90e2;
+}
+
+.content{
+    padding:20px;
+}
+
+.title{
+    font-size:1.5rem;
+    margin-bottom:16px;
+}
+</style>
+</head>
+<body>
+
+<h1>Wanderer Archive</h1>
+
+<div id="container"></div>
+
 <script>
-fetch("wandererDB.json")
-.then(r => r.json())
+
+fetch("./wandererDB.json")
+.then(response => response.json())
 .then(data => {
 
-    const container = document.getElementById("container");
+    console.log("JSON loaded", data);
 
-    Object.values(data.intro).forEach(item => {
+    const container =
+        document.getElementById("container");
 
-        const article = document.createElement("div");
+    Object.entries(data.intro)
+    .forEach(([id,item]) => {
 
-        article.innerHTML = `
-            <h2>${item.title.ja}</h2>
-            <div>${item.description.ja}</div>
-            <hr>
-        `;
+        const card =
+            document.createElement("div");
 
-        container.appendChild(article);
+        card.className = "card";
+
+        const tabs =
+            document.createElement("div");
+
+        tabs.className = "tabs";
+
+        const content =
+            document.createElement("div");
+
+        content.className = "content";
+
+        const availableLangs =
+            Object.keys(data.language)
+            .filter(lang =>
+                item.description &&
+                item.description[lang] !== null
+            );
+
+        if(availableLangs.length === 0){
+            return;
+        }
+
+        function render(lang){
+
+            content.innerHTML = "";
+
+            const title =
+                document.createElement("div");
+
+            title.className = "title";
+
+            title.textContent =
+                item.title[lang] ??
+                item.title.ja ??
+                "";
+
+            const desc =
+                document.createElement("div");
+
+            desc.innerHTML =
+                item.description[lang] ??
+                "";
+
+            content.appendChild(title);
+            content.appendChild(desc);
+
+            tabs
+            .querySelectorAll("button")
+            .forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+            const activeButton =
+                document.getElementById(
+                    `tab-${id}-${lang}`
+                );
+
+            if(activeButton){
+                activeButton.classList.add("active");
+            }
+        }
+
+        availableLangs.forEach(lang => {
+
+            const button =
+                document.createElement("button");
+
+            button.id =
+                `tab-${id}-${lang}`;
+
+            button.textContent =
+                data.language[lang];
+
+            button.addEventListener(
+                "click",
+                () => render(lang)
+            );
+
+            tabs.appendChild(button);
+        });
+
+        render(availableLangs[0]);
+
+        card.appendChild(tabs);
+        card.appendChild(content);
+
+        container.appendChild(card);
+
     });
 
 })
-.catch(console.error);
+.catch(error => {
+
+    console.error(error);
+
+    document.body.innerHTML +=
+        `<pre>${error}</pre>`;
+});
 </script>
 
-<div id="container"></div>
+</body>
+</html>
