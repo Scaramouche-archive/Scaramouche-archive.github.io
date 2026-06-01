@@ -5,27 +5,21 @@
 
 <script>
 fetch("./wandererDB.json")
-.then(r => r.text())
-.then(text => {
+.then(r => r.json())
+.then(data => {
 
-    document.getElementById("out").innerHTML =
-        "文字数: " + text.length;
+    console.log(data);
+    console.log(data.intro);
 
-    try {
+    Object.entries(data.intro).forEach(([id,item]) => {
 
-        JSON.parse(text);
+        console.log(
+            id,
+            item.title?.ja,
+            item.description?.ja?.length
+        );
 
-        document.getElementById("out").innerHTML +=
-            "<br>JSON OK";
-
-    } catch(e) {
-
-        document.getElementById("out").innerHTML +=
-            "<br>" + e.message;
-
-        console.error(e);
-
-    }
+    });
 
 });
 </script>
