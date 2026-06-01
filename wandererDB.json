@@ -6,158 +6,169 @@
     "en": "English",
     "kr": "Korean"
   },
-  "intro": {
-    "1": {
-      "title":{
-        "ja":"声優発表：謎の少年",
-        "chs": "声优公布: 未知的少年",
-        "cht": "聲優公佈: 未知的少年",
-        "en": "VA Announcement: Unknown boy",
-        "kr": "성우 공개: 정체불명의 소년"
+  "sections": {
+    "intro": {
+      "name": {
+        "ja": "キャラクター紹介",
+        "chs": "角色介绍",
+        "cht": "角色介紹",
+        "en": "Character Introduction",
+        "kr": "캐릭터 소개"
       },
-      "description": {
-        "ja":"【声優発表】<br>メインストーリー・イベント「帰らぬ熄星」-第二段階「怪しい夢の星」にて登場する謎の少年。<br><br>謎の少年 CV  柿原徹也<br>「僕は稲妻から来た浮浪人。倒れた人を助けようとしたら、君たちが現れたんだ。」<br><br>※「怪しい夢の星」は2020/11/18 04:59より開放されます<br><br>#miHoYo #原神 #柿原徹也",
-        "chs": null,
-        "cht": null,
-        "en": null,
-        "kr": null
-      },
-      "img":[
-        {
-          "intro.scara-va-fitst": {
-            "ja":"intro/ja/scara-va-fitst",
-            "chs":null,
-            "cht":null,
-            "en":null,
-            "kr":null
-          }
-        }
-      ],
-      "lang":["ja"],
-      "url": [
-        {
-          "ja":[
-            {
-              "Twitter":"https://x.com/Genshin_7/status/1328714972008906755"
-            }
-          ],
-          "chs":[],
-          "cht":[],
-          "en":[],
-          "kr":[]
-        }
-      ]
-    },
-    "2": {
-      "title":{
-        "ja":"キャラクター紹介：「散兵」スカラマシュ",
-        "chs":"角色介绍: 「散兵」",
-        "cht":"角色介紹: 「散兵」",
-        "en":"Introduction: Scaramouche",
-        "kr":"캐릭터 소개: 스카라무슈"
-      },
-      "description": {
-        "ja":"【キャラクター紹介】<br>外見は眉目秀麗な顔に細身の体型の浮浪人。正体は凄まじい戦闘力と頭脳を持ち合わせた愚人衆執行官。表と裏の差が激しく、予測不可能な人物である。<br><br>ファトゥス 第6位  散兵（ざんひょう）　<br>スカラマシュ　CV：柿原徹也<br><br>「僕が、いつ勝手に判断する権利を与えた？」<br><br>#原神",
-        "chs": null,
-        "cht": null,
-        "en": null,
-        "kr": null
-      },
-      "img":[
-        {
-          "intro.scara-va-fitst": {
-            "ja":"intro/ja/scara-va",
-            "chs":null,
-            "cht":null,
-            "en":null,
-            "kr":null
-          }
-        }
-      ],
-      "lang":["ja"],
-      "url": [
-        {
-          "ja":[
-            {
-              "Twitter":"https://x.com/Genshin_7/status/1331185988857524224"
-            }
-          ],
-          "chs":[],
-          "cht":[],
-          "en":[],
-          "kr":[]
-        }
-      ]
-    },
-    "3": {
-      "title":{
-        "ja":"キャラクター紹介：放浪者",
-        "chs":"角色介绍: 流浪者",
-        "cht":"角色介紹: 流浪者",
-        "en":"Character Introduction: Wanderer",
-        "kr":"캐릭터 소개: 방랑자"
-      },
-      "description": {
-        "ja":"一処より心を知りて、一切処の心を悟らん<br><br>「信仰者は神の栄光を築き、裏切者は神の化度を見届ける。でもこの者について、私はどちらにも彼を位置付けするつもりはないわ。いかなる不確定要素も、彼がこれから歩む道の礎なのだから。」<br>——摩訶善法マハークサナリ知恵の主 ブエル<br><br>その夜、ある黒い影が大雨に乗じてたたら砂の旧跡にやって来た。付近の住民はとうの昔にいなくなっていたが、今日に限ってとある農夫が生計のため鳴草を採りに来ていた。農夫は夜の微かな明かりを頼りに、崖のそばに鬼魅のような人影が立っているのを見た。<br>その者は大きな笠をかぶっており、顔を見ることができない。息の音が雨の幕を突き通り、農夫の耳にまで届く。<br>刹那、その者は言う——人はこうやって息をするんだ、と。<br>農夫は怪異にでも出くわしたのかと不安になり、慌てて岩の陰に隠れた。その者はさらに続ける——何を恐れている？互いに見知らぬ通行人だろう、まさか危害を加えるとでも思ったのか？僕はただこの地に立ち寄って、友の墓参りに来ただけさ。<br>その者が言い終わるや否や、農夫は顔を出して辺りを見回す。しかし、黒い影はいなくなっていた。地面には一枚の紙が落ちており、それは瞬く間に雨水に浸食されていく。紙には三つの質問と、それに対する書きかけの回答が記されていた——<br>人は心を持つのに、なぜ他者の心は恐れない？<br>なぜなら人は未熟で完璧ではないからだ。<br>人の未熟さを知る上で、如何にしてそれに向き合う？<br>……<br>心なき者は如何にして人となる？<br>心なき者は人に成り難し。<br>それを見た農夫は、背筋が凍る思いをした。たたら砂は荒れ果ててから何年も経っており、墓参りに来る者などとっくにいなかったからだ。たとえいたとしても、なぜこのような夜に限って現れたのだろうか。",
-        "chs": "▌久世浮倾 ·流浪者<br>如于一处知人心，即说一切处知人心<br>==========<br>「信仰者铸就神明的荣光，背弃者见证神明的度化。而这一位，我不会将他定性在任何一种位置上。一切不确定性均是他未来道路的基石。」<br>——摩诃善法大吉祥智慧主 布耶尔<br><br>此夜，一道黑影趁着暴雨来到踏鞴砂旧址。附近早应没有住户，可偏偏另有一名农夫为了谋生来到此地摘取鸣草，便借着夜色望见一条鬼魅似的人影立在山崖边。<br>那人戴着宽大的帽子，令旁人无从窥清他的面貌。他的呼吸声却穿透雨幕飘入到农夫耳中，一起一落。<br>须臾，又道：人应是这般呼吸的。<br>农夫生怕遇见了什么鬼怪，急忙躲藏到山石后。那人却又说：你害怕什么？陌生的过客，难道还会伤害你不成？我不过是途经此地，为朋友扫个墓而已。<br>话音方落，农夫探头出去，眼前已没了黑影。一张字条落在地面，瞬息之间就被雨水打湿。纸上记录着三个问题，与尚未写全的回答——<br><br>人有心，因何而不惧旁人之心？<br>因其劣性。<br><br>知人劣性，何以待之？<br>……<br><br>无心者何以为人？<br>无心者难以为人。<br><br>农夫看罢，只觉得背脊发凉。踏鞴砂荒废多年，早已没什么人前来祭扫。即便有，为何又只在这样的夜晚出现呢。",
-        "en": "Know one heart, know all hearts<br><br>\"Those who believe cast the gods in glory, while unbelievers witness how gods transcend. But as for him, I will not characterize him as either. All uncertainties are but foundations for his future path.\"<br>— Blessed One of Wisdom, Mahakusaladhamma - Buer<br><br>◆ The Wanderer<br>◆ Eons Adrift<br>◆ Tribulations Uncounted, Trials Unknowable<br>◆ Anemo<br>◆ Peregrinus<br><br>On a fateful night, a figure arrived at a place that had once been called Tatarasuna. There should no longer have been residents there, but as if destiny had decreed it, a farmer had come there, picking Naku Weed to make a living. Thus it was under the moonlight that he saw a phantom figure standing on the edge of the cliff.<br>This person wore a wide hat that concealed their face entirely. However, the farmer could hear breathing through the pitter-patter of the rain.<br>A moment later, the figure spoke. \"This is how humans should breathe.\"<br>The farmer was terrified that he might had encountered some spirit, and hurriedly hid behind a rock. The figure spoke again. \"What are you afraid of? Would a passerby such as I hurt you? I am merely here to tend to the grave of a friend.\"<br>Silence filled the air once more. The farmer peeked out from behind the rock, and saw that the figure had vanished. A note drifted to the ground and was instantly soaked by the rain. Three questions had been written on that piece of paper, along with answers that were not yet fully written—<br>If humans have a heart, why do they not fear the hearts of others?<br>Due to their inferior nature.<br>How should one treat others, knowing full well their inferiority?<br>...<br>How can one be a human being without a heart?<br>One without a heart is hardly human.<br>Chills ran down the farmer's spine as he finished reading the note. Tatarasuna had been deserted for many years, and it had been a long time since anyone came here to pay their respects. And even if there were, why would they appear on such a night?",
-        "cht": "如於一處知人心，即說一切處知人心<br><br>「信仰者鑄就神明的榮光，背棄者見證神明的度化。而這一位，我不會將他定性在任何一種位置上。一切不確定性均是他未來道路的基石。」<br>——摩訶善法大吉祥智慧主 布耶爾<br><br>◆ 流浪者<br>◆ 久世浮傾<br>◆ 「千般劫渡，不可得知」<br>◆ 風<br>◆ 浪客座<br><br>此夜，一道黑影趁著暴雨來到踏鞴砂舊址。附近早應沒有住戶，可偏偏另有一名農夫為了謀生來到此地摘取鳴草，便借著夜色望見一條鬼魅似的人影立在山崖邊。<br>那人戴著寬大的帽子，令旁人無從窺清他的面貌。他的呼吸聲卻穿透雨幕飄入到農夫耳中，一起一落。<br>須臾，又道：人應是這般呼吸的。<br>農夫生怕遇見了什麼鬼怪，急忙躲藏到山石後。那人卻又說：你害怕什麼？陌生的過客，難道還會傷害你不成？我不過是途經此地，為朋友掃個墓而已。<br>話音方落，農夫探頭出去，眼前已沒了黑影。一張字條落在地面，瞬息之間就被雨水打濕。紙上記錄著三個問題，與尚未寫全的回答——<br>人有心，因何而不懼旁人之心？<br>因其劣性。<br>知人劣性，何以待之？<br>……<br>無心者何以為人？<br>無心者難以為人。<br>農夫看罷，只覺得背脊發涼。踏鞴砂荒廢多年，早已沒什麼人前來祭掃。即便有，為何又只在這樣的夜晚出現呢。",
-        "kr": "하나의 마음을 아는 것은, 곧 모든 마음을 아는 것<br><br>「신자는 신의 영광을 이룩하고, 불신자는 신의 교화를 지켜보지. 그러나 나는 그를 어느 한쪽으로 정의하지 않을 거야. 모든 불확실성은 그의 미래를 닦는 초석이나 다름없으니까.」——위대한 쿠살라 다르마, 쿠사나리 지혜의 주인 부에르◆ 방랑자◆ 기나긴 방황◆ 「천겁의 고난, 얻지 못한 깨달음」◆ 바람◆ 낭객자리"
-      },
-      "img":[
-        {
-          "intro.wanderer.long": {
-            "ja":"intro/ja/wanderer-long",
-            "chs":"intro/chs/wanderer-long",
-            "cht":"intro/cht/wanderer-long",
-            "en":"intro/en/wanderer-long",
-            "kr":"intro/kr/wanderer-long"
+      "items": {
+        "1": {
+          "title":{
+            "ja":"声優発表：謎の少年",
+            "chs": "声优公布: 未知的少年",
+            "cht": "聲優公佈: 未知的少年",
+            "en": "VA Announcement: Unknown boy",
+            "kr": "성우 공개: 정체불명의 소년"
           },
-          "intro.wanderer.square": {
-            "ja":null,
-            "chs":"intro/chs/wanderer-square",
-            "cht":"intro/cht/wanderer-square",
-            "en":"intro/en/wanderer-square",
-            "kr":"intro/kr/wanderer-square"
-          }
-        }
-      ],
-      "lang":["ja","chs","cht","en","kr"],
-      "url": [
-        {
-          "ja":[
+          "description": {
+            "ja":"【声優発表】<br>メインストーリー・イベント「帰らぬ熄星」-第二段階「怪しい夢の星」にて登場する謎の少年。<br><br>謎の少年 CV  柿原徹也<br>「僕は稲妻から来た浮浪人。倒れた人を助けようとしたら、君たちが現れたんだ。」<br><br>※「怪しい夢の星」は2020/11/18 04:59より開放されます<br><br>#miHoYo #原神 #柿原徹也",
+            "chs": null,
+            "cht": null,
+            "en": null,
+            "kr": null
+          },
+          "img":[
             {
-              "Twitter":"https://x.com/Genshin_7/status/1331185988857524224",
-              "HoYoLAB":"https://www.hoyolab.com/article/13254885"
+              "intro.scara-va-fitst": {
+                "ja":"intro/ja/scara-va-fitst",
+                "chs":null,
+                "cht":null,
+                "en":null,
+                "kr":null
+              }
             }
           ],
-          "chs":[
+          "lang":["ja"],
+          "url": [
             {
-              "微博":"https://weibo.com/6593199887/McSsHcgPM",
-              "米遊社":"https://www.miyoushe.com/ys/article/30915435"
+              "ja":[
+                {
+                  "Twitter":"https://x.com/Genshin_7/status/1328714972008906755"
+                }
+              ],
+              "chs":[],
+              "cht":[],
+              "en":[],
+              "kr":[]
+            }
+          ]
+        },
+        "2": {
+          "title":{
+            "ja":"キャラクター紹介：「散兵」スカラマシュ",
+            "chs":"角色介绍: 「散兵」",
+            "cht":"角色介紹: 「散兵」",
+            "en":"Introduction: Scaramouche",
+            "kr":"캐릭터 소개: 스카라무슈"
+          },
+          "description": {
+            "ja":"【キャラクター紹介】<br>外見は眉目秀麗な顔に細身の体型の浮浪人。正体は凄まじい戦闘力と頭脳を持ち合わせた愚人衆執行官。表と裏の差が激しく、予測不可能な人物である。<br><br>ファトゥス 第6位  散兵（ざんひょう）　<br>スカラマシュ　CV：柿原徹也<br><br>「僕が、いつ勝手に判断する権利を与えた？」<br><br>#原神",
+            "chs": null,
+            "cht": null,
+            "en": null,
+            "kr": null
+          },
+          "img":[
+            {
+              "intro.scara-va-fitst": {
+                "ja":"intro/ja/scara-va",
+                "chs":null,
+                "cht":null,
+                "en":null,
+                "kr":null
+              }
             }
           ],
-          "cht":[
+          "lang":["ja"],
+          "url": [
             {
-              "HoYoLAB":"https://www.hoyolab.com/article/13254885"
+              "ja":[
+                {
+                  "Twitter":"https://x.com/Genshin_7/status/1331185988857524224"
+                }
+              ],
+              "chs":[],
+              "cht":[],
+              "en":[],
+              "kr":[]
+            }
+          ]
+        },
+        "3": {
+          "title":{
+            "ja":"キャラクター紹介：放浪者",
+            "chs":"角色介绍: 流浪者",
+            "cht":"角色介紹: 流浪者",
+            "en":"Character Introduction: Wanderer",
+            "kr":"캐릭터 소개: 방랑자"
+          },
+          "description": {
+            "ja":"一処より心を知りて、一切処の心を悟らん<br><br>「信仰者は神の栄光を築き、裏切者は神の化度を見届ける。でもこの者について、私はどちらにも彼を位置付けするつもりはないわ。いかなる不確定要素も、彼がこれから歩む道の礎なのだから。」<br>——摩訶善法マハークサナリ知恵の主 ブエル<br><br>その夜、ある黒い影が大雨に乗じてたたら砂の旧跡にやって来た。付近の住民はとうの昔にいなくなっていたが、今日に限ってとある農夫が生計のため鳴草を採りに来ていた。農夫は夜の微かな明かりを頼りに、崖のそばに鬼魅のような人影が立っているのを見た。<br>その者は大きな笠をかぶっており、顔を見ることができない。息の音が雨の幕を突き通り、農夫の耳にまで届く。<br>刹那、その者は言う——人はこうやって息をするんだ、と。<br>農夫は怪異にでも出くわしたのかと不安になり、慌てて岩の陰に隠れた。その者はさらに続ける——何を恐れている？互いに見知らぬ通行人だろう、まさか危害を加えるとでも思ったのか？僕はただこの地に立ち寄って、友の墓参りに来ただけさ。<br>その者が言い終わるや否や、農夫は顔を出して辺りを見回す。しかし、黒い影はいなくなっていた。地面には一枚の紙が落ちており、それは瞬く間に雨水に浸食されていく。紙には三つの質問と、それに対する書きかけの回答が記されていた——<br>人は心を持つのに、なぜ他者の心は恐れない？<br>なぜなら人は未熟で完璧ではないからだ。<br>人の未熟さを知る上で、如何にしてそれに向き合う？<br>……<br>心なき者は如何にして人となる？<br>心なき者は人に成り難し。<br>それを見た農夫は、背筋が凍る思いをした。たたら砂は荒れ果ててから何年も経っており、墓参りに来る者などとっくにいなかったからだ。たとえいたとしても、なぜこのような夜に限って現れたのだろうか。",
+            "chs": "▌久世浮倾 ·流浪者<br>如于一处知人心，即说一切处知人心<br>==========<br>「信仰者铸就神明的荣光，背弃者见证神明的度化。而这一位，我不会将他定性在任何一种位置上。一切不确定性均是他未来道路的基石。」<br>——摩诃善法大吉祥智慧主 布耶尔<br><br>此夜，一道黑影趁着暴雨来到踏鞴砂旧址。附近早应没有住户，可偏偏另有一名农夫为了谋生来到此地摘取鸣草，便借着夜色望见一条鬼魅似的人影立在山崖边。<br>那人戴着宽大的帽子，令旁人无从窥清他的面貌。他的呼吸声却穿透雨幕飘入到农夫耳中，一起一落。<br>须臾，又道：人应是这般呼吸的。<br>农夫生怕遇见了什么鬼怪，急忙躲藏到山石后。那人却又说：你害怕什么？陌生的过客，难道还会伤害你不成？我不过是途经此地，为朋友扫个墓而已。<br>话音方落，农夫探头出去，眼前已没了黑影。一张字条落在地面，瞬息之间就被雨水打湿。纸上记录着三个问题，与尚未写全的回答——<br><br>人有心，因何而不惧旁人之心？<br>因其劣性。<br><br>知人劣性，何以待之？<br>……<br><br>无心者何以为人？<br>无心者难以为人。<br><br>农夫看罢，只觉得背脊发凉。踏鞴砂荒废多年，早已没什么人前来祭扫。即便有，为何又只在这样的夜晚出现呢。",
+            "en": "Know one heart, know all hearts<br><br>\"Those who believe cast the gods in glory, while unbelievers witness how gods transcend. But as for him, I will not characterize him as either. All uncertainties are but foundations for his future path.\"<br>— Blessed One of Wisdom, Mahakusaladhamma - Buer<br><br>◆ The Wanderer<br>◆ Eons Adrift<br>◆ Tribulations Uncounted, Trials Unknowable<br>◆ Anemo<br>◆ Peregrinus<br><br>On a fateful night, a figure arrived at a place that had once been called Tatarasuna. There should no longer have been residents there, but as if destiny had decreed it, a farmer had come there, picking Naku Weed to make a living. Thus it was under the moonlight that he saw a phantom figure standing on the edge of the cliff.<br>This person wore a wide hat that concealed their face entirely. However, the farmer could hear breathing through the pitter-patter of the rain.<br>A moment later, the figure spoke. \"This is how humans should breathe.\"<br>The farmer was terrified that he might had encountered some spirit, and hurriedly hid behind a rock. The figure spoke again. \"What are you afraid of? Would a passerby such as I hurt you? I am merely here to tend to the grave of a friend.\"<br>Silence filled the air once more. The farmer peeked out from behind the rock, and saw that the figure had vanished. A note drifted to the ground and was instantly soaked by the rain. Three questions had been written on that piece of paper, along with answers that were not yet fully written—<br>If humans have a heart, why do they not fear the hearts of others?<br>Due to their inferior nature.<br>How should one treat others, knowing full well their inferiority?<br>...<br>How can one be a human being without a heart?<br>One without a heart is hardly human.<br>Chills ran down the farmer's spine as he finished reading the note. Tatarasuna had been deserted for many years, and it had been a long time since anyone came here to pay their respects. And even if there were, why would they appear on such a night?",
+            "cht": "如於一處知人心，即說一切處知人心<br><br>「信仰者鑄就神明的榮光，背棄者見證神明的度化。而這一位，我不會將他定性在任何一種位置上。一切不確定性均是他未來道路的基石。」<br>——摩訶善法大吉祥智慧主 布耶爾<br><br>◆ 流浪者<br>◆ 久世浮傾<br>◆ 「千般劫渡，不可得知」<br>◆ 風<br>◆ 浪客座<br><br>此夜，一道黑影趁著暴雨來到踏鞴砂舊址。附近早應沒有住戶，可偏偏另有一名農夫為了謀生來到此地摘取鳴草，便借著夜色望見一條鬼魅似的人影立在山崖邊。<br>那人戴著寬大的帽子，令旁人無從窺清他的面貌。他的呼吸聲卻穿透雨幕飄入到農夫耳中，一起一落。<br>須臾，又道：人應是這般呼吸的。<br>農夫生怕遇見了什麼鬼怪，急忙躲藏到山石後。那人卻又說：你害怕什麼？陌生的過客，難道還會傷害你不成？我不過是途經此地，為朋友掃個墓而已。<br>話音方落，農夫探頭出去，眼前已沒了黑影。一張字條落在地面，瞬息之間就被雨水打濕。紙上記錄著三個問題，與尚未寫全的回答——<br>人有心，因何而不懼旁人之心？<br>因其劣性。<br>知人劣性，何以待之？<br>……<br>無心者何以為人？<br>無心者難以為人。<br>農夫看罷，只覺得背脊發涼。踏鞴砂荒廢多年，早已沒什麼人前來祭掃。即便有，為何又只在這樣的夜晚出現呢。",
+            "kr": "하나의 마음을 아는 것은, 곧 모든 마음을 아는 것<br><br>「신자는 신의 영광을 이룩하고, 불신자는 신의 교화를 지켜보지. 그러나 나는 그를 어느 한쪽으로 정의하지 않을 거야. 모든 불확실성은 그의 미래를 닦는 초석이나 다름없으니까.」——위대한 쿠살라 다르마, 쿠사나리 지혜의 주인 부에르◆ 방랑자◆ 기나긴 방황◆ 「천겁의 고난, 얻지 못한 깨달음」◆ 바람◆ 낭객자리"
+          },
+          "img":[
+            {
+              "intro.wanderer.long": {
+                "ja":"intro/ja/wanderer-long",
+                "chs":"intro/chs/wanderer-long",
+                "cht":"intro/cht/wanderer-long",
+                "en":"intro/en/wanderer-long",
+                "kr":"intro/kr/wanderer-long"
+              },
+              "intro.wanderer.square": {
+                "ja":null,
+                "chs":"intro/chs/wanderer-square",
+                "cht":"intro/cht/wanderer-square",
+                "en":"intro/en/wanderer-square",
+                "kr":"intro/kr/wanderer-square"
+              }
             }
           ],
-          "en":[
+          "lang":["ja","chs","cht","en","kr"],
+          "url": [
             {
-              "Twitter":"https://x.com/GenshinImpact/status/1587021567929847810",
-              "Twitter (Square)":"https://x.com/GenshinImpact/status/1587021567124307971",
-              "HoYoLAB":"https://www.hoyolab.com/article/13254885"
-            }
-          ],
-          "kr":[
-            {
-              "Twitter":"https://x.com/genshinimpactkr/status/1587021567925669888",
-              "Twitter (사각형)":"https://x.com/genshinimpactkr/status/1587021566738563076",
-              "HoYoLAB":"https://www.hoyolab.com/article/13254885/?lang=ja-jp"
+              "ja":[
+                {
+                  "Twitter":"https://x.com/Genshin_7/status/1331185988857524224",
+                  "HoYoLAB":"https://www.hoyolab.com/article/13254885"
+                }
+              ],
+              "chs":[
+                {
+                  "微博":"https://weibo.com/6593199887/McSsHcgPM",
+                  "米遊社":"https://www.miyoushe.com/ys/article/30915435"
+                }
+              ],
+              "cht":[
+                {
+                  "HoYoLAB":"https://www.hoyolab.com/article/13254885"
+                }
+              ],
+              "en":[
+                {
+                  "Twitter":"https://x.com/GenshinImpact/status/1587021567929847810",
+                  "Twitter (Square)":"https://x.com/GenshinImpact/status/1587021567124307971",
+                  "HoYoLAB":"https://www.hoyolab.com/article/13254885"
+                }
+              ],
+              "kr":[
+                {
+                  "Twitter":"https://x.com/genshinimpactkr/status/1587021567925669888",
+                  "Twitter (사각형)":"https://x.com/genshinimpactkr/status/1587021566738563076",
+                  "HoYoLAB":"https://www.hoyolab.com/article/13254885/?lang=ja-jp"
+                }
+              ]
             }
           ]
         }
-      ]
+      }
     }
   }
 }
