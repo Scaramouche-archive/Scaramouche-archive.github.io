@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderer Archive</title>
+<style>
+body{
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    background:#111;
+    color:#fff;
+}
+.card{
+    border:1px solid #333;
+    border-radius:12px;
+    margin-bottom:24px;
+    overflow:hidden;
+}
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+    background:#222;
+}
+.tabs button{
+    border:none;
+    background:#222;
+    color:white;
+    padding:12px 16px;
+    cursor:pointer;
+}
+.tabs button.active{
+    background:#4a90e2;
+}
+.content{
+    padding:20px;
+}
+.title{
+    font-size:1.5rem;
+    margin-bottom:16px;
+}
+.links a{
+    color:#7eb8ff;
+    margin-right:12px;
+}
+img{
+    max-width:100%;
+    border-radius:8px;
+    margin:8px 0;
+}
+</style>
+</head>
+<body>
+
+<h1>Wanderer Archive</h1>
+<div id="container"></div>
+
+<script>
+fetch('./wandererDB.json')
+.then(r=>r.json())
+.then(data=>{
+
+    const languages = data.language || data.langage;
+    const container = document.getElementById('container');
+
+    Object.entries(data.intro).forEach(([id,item])=>{
+
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const tabs = document.createElement('div');
+        tabs.className = 'tabs';
+
+        const content = document.createElement('div');
+        content.className = 'content';
+
+        const availableLangs = Object.keys(languages).filter(
+            lang => item.title?.[lang] && item.description?.[lang] !== null
+        );
+
+        function render(lang){
+
+            content.innerHTML = '';
+
+            const title = document.createElement('div');
+            title.className = 'title';
+            title.textContent = item.title?.[lang] || '';
+            content.appendChild(title);
+
+            const desc = document.createElement('div');
+            desc.innerHTML = item.description?.[lang] || '';
+            content.appendChild(desc);
+
+            if(item.img){
+                const imageArea = document.createElement('div');
+
+                item.img.forEach(group=>{
+                    Object.entries(group).forEach(([key,langs])=>{
+
+                        if(langs[lang]){
+                            const img = document.createElement('img');
+                            img.src = langs[lang] + '.jpg';
+                            img.alt = key;
+                            imageArea.appendChild(img);
+                        }
+                    });
+                });
+
+                content.appendChild(imageArea);
+            }
+
+            const links = document.createElement('div');
+            links.className = 'links';
+
+            const urlData = item.url?.[0]?.[lang] || [];
+
+            urlData.forEach(site=>{
+                Object.entries(site).forEach(([name,url])=>{
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.target = '_blank';
+                    a.textContent = name;
+                    links.appendChild(a);
+                });
+            });
+
+            content.appendChild(links);
+
+            [...tabs.children].forEach(btn=>btn.classList.remove('active'));
+            document.getElementById(`tab-${id}-${lang}`)?.classList.add('active');
+        }
+
+        availableLangs.forEach((lang,index)=>{
+
+            const btn = document.createElement('button');
+            btn.id = `tab-${id}-${lang}`;
+            btn.textContent = languages[lang];
+            btn.onclick = ()=>render(lang);
+
+            tabs.appendChild(btn);
+
+            if(index === 0){
+                setTimeout(()=>render(lang),0);
+            }
+        });
+
+        card.appendChild(tabs);
+        card.appendChild(content);
+        container.appendChild(card);
+    });
+});
+</script>
+
+</body>
+</html>
