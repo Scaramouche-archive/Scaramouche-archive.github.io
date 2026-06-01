@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Wanderer Archive</title>
+</head>
 <body>
-<div id="out"></div>
+
+<div id="app"></div>
 
 <script>
+
 fetch("./wandererDB.json")
 .then(r => r.json())
 .then(data => {
 
-    console.log(data);
-    console.log(data.intro);
+    const app =
+        document.getElementById("app");
 
-    Object.entries(data.intro).forEach(([id,item]) => {
+    Object.values(data.intro)
+    .forEach(item => {
 
-        console.log(
-            id,
-            item.title?.ja,
-            item.description?.ja?.length
-        );
+        const article =
+            document.createElement("article");
+
+        article.innerHTML = `
+            <h2>${item.title.ja}</h2>
+            <div>${item.description.ja}</div>
+            <hr>
+        `;
+
+        app.appendChild(article);
 
     });
 
 });
+
 </script>
+
 </body>
 </html>
