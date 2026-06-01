@@ -58,121 +58,27 @@ body{
 <div id="container"></div>
 
 <script>
-
 fetch("./wandererDB.json")
-.then(response => response.json())
-.then(data => {
+.then(response => {
 
-    console.log("JSON loaded", data);
+    console.log(response);
+    console.log(response.status);
+    console.log(response.headers.get("content-type"));
 
-    const container =
-        document.getElementById("container");
-
-    Object.entries(data.intro)
-    .forEach(([id,item]) => {
-
-        const card =
-            document.createElement("div");
-
-        card.className = "card";
-
-        const tabs =
-            document.createElement("div");
-
-        tabs.className = "tabs";
-
-        const content =
-            document.createElement("div");
-
-        content.className = "content";
-
-        const availableLangs =
-            Object.keys(data.language)
-            .filter(lang =>
-                item.description &&
-                item.description[lang] !== null
-            );
-
-        if(availableLangs.length === 0){
-            return;
-        }
-
-        function render(lang){
-
-            content.innerHTML = "";
-
-            const title =
-                document.createElement("div");
-
-            title.className = "title";
-
-            title.textContent =
-                item.title[lang] ??
-                item.title.ja ??
-                "";
-
-            const desc =
-                document.createElement("div");
-
-            desc.innerHTML =
-                item.description[lang] ??
-                "";
-
-            content.appendChild(title);
-            content.appendChild(desc);
-
-            tabs
-            .querySelectorAll("button")
-            .forEach(btn =>
-                btn.classList.remove("active")
-            );
-
-            const activeButton =
-                document.getElementById(
-                    `tab-${id}-${lang}`
-                );
-
-            if(activeButton){
-                activeButton.classList.add("active");
-            }
-        }
-
-        availableLangs.forEach(lang => {
-
-            const button =
-                document.createElement("button");
-
-            button.id =
-                `tab-${id}-${lang}`;
-
-            button.textContent =
-                data.language[lang];
-
-            button.addEventListener(
-                "click",
-                () => render(lang)
-            );
-
-            tabs.appendChild(button);
-        });
-
-        render(availableLangs[0]);
-
-        card.appendChild(tabs);
-        card.appendChild(content);
-
-        container.appendChild(card);
-
-    });
+    return response.text();
 
 })
-.catch(error => {
+.then(text => {
 
-    console.error(error);
+    console.log(text.substring(0,100));
 
-    document.body.innerHTML +=
-        `<pre>${error}</pre>`;
-});
+    document.body.innerHTML =
+        "<pre>" +
+        text.substring(0,500) +
+        "</pre>";
+
+})
+.catch(console.error);
 </script>
 
 </body>
