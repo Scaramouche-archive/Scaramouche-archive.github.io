@@ -69,4 +69,9 @@ border-radius:8px;
 color:#7eb8ff;
 text-decoration:none;
 }
-.error{color:#ff8080}
+.error{
+  color:#ff8080
+}
+footer small {
+  color:silver;
+}
