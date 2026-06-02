@@ -14,7 +14,7 @@ h1{text-align:center}
 .content{padding:24px}
 .title{font-size:1.5rem;font-weight:bold;margin-bottom:16px}
 .images{text-align:center;margin-top:24px}
-.images img{display:block;margin:0 auto 20px;width:min(500px,100%);height:auto;max-height:500px;border-radius:12px}
+.images img{display:block;margin:0 auto 20px;width:min(500px,100%);height:auto;max-height:500px;object-fit: contain;border-radius:12px}
 .links{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
 .links a{padding:8px 12px;background:#222838;border-radius:8px;color:#7eb8ff}
 .version{margin-top:24px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);color:#8a92a5;font-size:.9rem;text-align:right}
