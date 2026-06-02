@@ -9,14 +9,62 @@ function getCurrentSection(){
 }
 
 function formatVersion(version){
- if(!version)return "";
- const m=/^(\d+)\.(\d+)$/.exec(version);
- if(!m)return version;
- const major=Number(m[1]);
- const minor=Number(m[2]);
- if(major!==6)return version;
- const latin={0:"I",1:"II",2:"III",3:"IV",4:"V",5:"VI",6:"VII",7:"VIII",8:"IX",9:"X"};
- return `Luna ${latin[minor]||minor} (${version})`;
+if (!version) {
+    return "";
+}
+
+const match =
+    /^(\d+)\.(\d+)$/.exec(version);
+
+if (!match) {
+    return version;
+}
+
+const major =
+    Number(match[1]);
+
+const minor =
+    Number(match[2]);
+
+if (major !== 6) {
+    return version;
+}
+
+if (
+    currentLang === "chs" ||
+    currentLang === "cht"
+) {
+
+    const chineseNumbers = {
+        0: "一",
+        1: "二",
+        2: "三",
+        3: "四",
+        4: "五",
+        5: "六",
+        6: "七",
+        7: "八",
+        8: "九",
+        9: "十"
+    };
+
+    return `月之${chineseNumbers[minor] || minor}（${version}）`;
+}
+
+const latin = {
+    0: "I",
+    1: "II",
+    2: "III",
+    3: "IV",
+    4: "V",
+    5: "VI",
+    6: "VII",
+    7: "VIII",
+    8: "IX",
+    9: "X"
+};
+
+return `Luna ${latin[minor] || minor} (${version})`;
 }
 
 function buildLanguageSwitcher(languageMap){
@@ -152,11 +200,33 @@ app.appendChild(menu);
       content.appendChild(links);
 
       if(item.version){
-        const labels={ja:"バージョン：",en:"Version: ",chs:"版本：",cht:"版本：",kr:"버전: "};
-        const v=document.createElement("div");
-        v.className="version";
-        v.textContent=(labels[lang]||"Version: ")+formatVersion(item.version);
-        content.appendChild(v);
+        const labels = {
+    ja: "バージョン：",
+    en: "Version: ",
+    chs: "版本：",
+    cht: "版本：",
+    kr: "버전: "
+};
+
+const version =
+    document.createElement(
+        "div"
+    );
+
+version.className =
+    "version";
+
+version.textContent =
+    (labels[currentLang]
+    || "Version: ")
+    +
+    formatVersion(
+        item.version
+    );
+
+content.appendChild(
+    version
+);
       }
    }
 
