@@ -43,13 +43,42 @@ fetch("/wandererDB.json")
  const sectionKey=getCurrentSection();
 
  if(!sectionKey||!data.sections?.[sectionKey]){
-   Object.entries(data.sections).forEach(([key,section])=>{
-      const card=document.createElement("a");
-      card.className="section-link";
-      card.href=`/${key}/?lang=${currentLang}`;
-      card.textContent=section.name?.[currentLang]||section.name?.ja||key;
-      app.appendChild(card);
-   });
+   const menu =
+    document.createElement("div");
+
+menu.className =
+    "section-menu";
+
+Object.entries(data.sections)
+.forEach(([key, section]) => {
+
+    const card =
+        document.createElement("a");
+
+    card.className =
+        "section-link";
+
+    card.href =
+        `/${key}/?lang=${currentLang}`;
+
+    card.innerHTML = `
+        <div class="section-name">
+            ${
+                section.name?.[currentLang]
+                || section.name?.ja
+                || key
+            }
+        </div>
+
+        <div class="section-desc">
+            Open Section
+        </div>
+    `;
+
+    menu.appendChild(card);
+});
+
+app.appendChild(menu);
    return;
  }
 
